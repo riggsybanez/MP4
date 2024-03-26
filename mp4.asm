@@ -13,14 +13,13 @@ _start:
     int 80h             
  
     cmp byte [buffer], 'A'
-    jl character_not_lowercase
+    jl character_not_uppercase
     cmp byte [buffer], 'Z'
-    jg character_not_lowercase
-
+    jg character_not_uppercase
 
     add byte [buffer], 32  
 
-character_not_lowercase:
+character_not_uppercase:
 
     mov eax, 4           
     mov ebx, 1          
@@ -30,6 +29,5 @@ character_not_lowercase:
 
 
     mov eax, 1           
-
 
 
